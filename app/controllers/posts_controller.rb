@@ -1,6 +1,12 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :like]
   before_action :authenticate_user!
+
+  def like
+    @like = current_user.likes.build likeable: @post
+    @like.save
+    redirect_to @post
+  end
 
   # GET /posts
   # GET /posts.json
@@ -11,6 +17,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @likes = @post.likes.size
   end
 
   # GET /posts/new
