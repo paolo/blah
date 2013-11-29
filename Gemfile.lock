@@ -1,3 +1,9 @@
+PATH
+  remote: ../likeable
+  specs:
+    likeable (0.0.1)
+      rails (~> 4.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -122,6 +128,7 @@ DEPENDENCIES
   devise
   jbuilder (~> 1.2)
   jquery-rails
+  likeable!
   rails (= 4.0.1)
   sass-rails (~> 4.0.0)
   sdoc
